@@ -87,7 +87,7 @@ const Landing = () => {
             : ''
         }`}
       >
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-8 sm:px-12 lg:px-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-600 text-white text-sm font-bold">A</div>
@@ -133,7 +133,7 @@ const Landing = () => {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950 overflow-hidden"
             >
-              <div className="px-6 py-5 space-y-4">
+              <div className="px-8 sm:px-12 py-5 space-y-4">
                 {navLinks.map((l) => (
                   <a key={l.label} href={l.href} onClick={() => setMenuOpen(false)} className="block text-base font-medium text-gray-700 dark:text-gray-300">
                     {l.label}
@@ -155,10 +155,10 @@ const Landing = () => {
         {/* Decorative grid */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_50%_60%_at_50%_40%,black_40%,transparent_100%)] opacity-60" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[600px] w-[900px] rounded-full bg-primary-400/20 dark:bg-primary-500/10 blur-[140px]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-primary-400/20 dark:bg-primary-500/10 blur-[140px]" />
         </div>
 
-        <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
+        <div className="relative mx-auto max-w-4xl px-8 sm:px-12 lg:px-20 text-center">
           {/* Pill */}
           <motion.div {...fadeUp(0)} className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary-200 dark:border-primary-800 bg-primary-50 dark:bg-primary-950/60 px-4 py-1.5 text-xs font-semibold text-primary-700 dark:text-primary-300">
             <HiAcademicCap className="h-4 w-4" /> AI-Powered Education Platform
@@ -207,7 +207,7 @@ const Landing = () => {
 
       {/* ─── FEATURES ─── */}
       <section id="features" className="py-20 sm:py-28 bg-gray-50 dark:bg-gray-900/50">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-8 sm:px-12 lg:px-20">
           <div className="mx-auto max-w-2xl text-center mb-14 sm:mb-20">
             <motion.p {...fadeUp(0)} className="text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-widest mb-3">Features</motion.p>
             <motion.h2 {...fadeUp(0.05)} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
@@ -218,12 +218,12 @@ const Landing = () => {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {features.map((f, i) => (
               <motion.div
                 key={f.title}
                 {...fadeUp(i * 0.03)}
-                className="group rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-7 hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300"
+                className="group rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-8 hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300"
               >
                 <div className={`inline-flex items-center justify-center h-11 w-11 rounded-xl ${f.bg} ${f.color} mb-5`}>
                   <f.icon className="h-5 w-5" />
@@ -238,7 +238,7 @@ const Landing = () => {
 
       {/* ─── HOW IT WORKS ─── */}
       <section id="how" className="py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-8 sm:px-12 lg:px-20">
           <div className="mx-auto max-w-2xl text-center mb-14 sm:mb-20">
             <motion.p {...fadeUp(0)} className="text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-widest mb-3">How it works</motion.p>
             <motion.h2 {...fadeUp(0.05)} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
@@ -246,7 +246,7 @@ const Landing = () => {
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((s, i) => (
               <motion.div key={s.num} {...fadeUp(i * 0.08)} className="relative text-center lg:text-left">
                 <div className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-primary-600 text-white text-xl font-extrabold mb-5 shadow-lg shadow-primary-600/20">
@@ -255,7 +255,7 @@ const Landing = () => {
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{s.title}</h3>
                 <p className="text-[15px] text-gray-500 dark:text-gray-400 leading-relaxed">{s.desc}</p>
                 {i < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-7 left-[calc(100%-8px)] w-[calc(100%-56px)] border-t-2 border-dashed border-gray-300 dark:border-gray-700" />
+                  <div className="hidden lg:block absolute top-7 left-[72px] right-[-32px] border-t-2 border-dashed border-gray-300 dark:border-gray-700" />
                 )}
               </motion.div>
             ))}
@@ -265,7 +265,7 @@ const Landing = () => {
 
       {/* ─── ROLES ─── */}
       <section id="roles" className="py-20 sm:py-28 bg-gray-50 dark:bg-gray-900/50">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-8 sm:px-12 lg:px-20">
           <div className="mx-auto max-w-2xl text-center mb-14 sm:mb-20">
             <motion.p {...fadeUp(0)} className="text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-widest mb-3">For Everyone</motion.p>
             <motion.h2 {...fadeUp(0.05)} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
@@ -276,14 +276,14 @@ const Landing = () => {
             </motion.p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {roles.map((r, i) => (
               <motion.div
                 key={r.title}
                 {...fadeUp(i * 0.08)}
                 className="flex flex-col rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 overflow-hidden hover:border-primary-300 dark:hover:border-primary-700 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300"
               >
-                <div className="p-7 flex flex-col flex-1">
+                <div className="p-8 flex flex-col flex-1">
                   <span className="text-4xl mb-4 block">{r.emoji}</span>
                   <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{r.title}</h3>
                   <p className="text-[15px] text-gray-500 dark:text-gray-400 leading-relaxed mb-6 flex-1">{r.desc}</p>
@@ -304,7 +304,7 @@ const Landing = () => {
 
       {/* ─── TESTIMONIALS ─── */}
       <section className="py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-8 sm:px-12 lg:px-20">
           <div className="mx-auto max-w-2xl text-center mb-14 sm:mb-20">
             <motion.p {...fadeUp(0)} className="text-sm font-semibold text-primary-600 dark:text-primary-400 uppercase tracking-widest mb-3">Testimonials</motion.p>
             <motion.h2 {...fadeUp(0.05)} className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
@@ -312,12 +312,12 @@ const Landing = () => {
             </motion.h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
             {testimonials.map((t, i) => (
               <motion.div
                 key={t.name}
                 {...fadeUp(i * 0.08)}
-                className="rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-7"
+                className="rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 p-8"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (
@@ -340,10 +340,10 @@ const Landing = () => {
 
       {/* ─── CTA ─── */}
       <section className="py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl px-8 sm:px-12 lg:px-20">
           <motion.div
             {...fadeUp(0)}
-            className="relative overflow-hidden rounded-3xl bg-primary-600 px-8 py-16 sm:px-16 sm:py-20 text-center"
+            className="relative overflow-hidden rounded-3xl bg-primary-600 px-10 py-16 sm:px-20 sm:py-24 text-center"
           >
             {/* Pattern */}
             <div
@@ -380,7 +380,7 @@ const Landing = () => {
 
       {/* ─── FOOTER ─── */}
       <footer className="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-950">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-14 sm:py-16">
+        <div className="mx-auto max-w-7xl px-8 sm:px-12 lg:px-20 py-14 sm:py-16">
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12">
             {/* Brand */}
             <div className="col-span-2">
