@@ -89,7 +89,7 @@ const AITutor = () => {
       </motion.div>
 
       {/* Messages */}
-      <Card className="flex-1 overflow-hidden flex flex-col">
+      <Card className="flex-1 overflow-hidden flex flex-col" padding="">
         <div className="flex-1 overflow-y-auto p-6 space-y-4">
           <AnimatePresence>
             {messages.map((msg, i) => (

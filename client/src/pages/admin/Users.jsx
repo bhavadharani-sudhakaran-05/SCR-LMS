@@ -59,7 +59,7 @@ const Users = () => {
         </div>
       </div>
 
-      <Card className="overflow-hidden">
+      <Card className="overflow-hidden" padding="">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead>

@@ -48,7 +48,7 @@ const Chat = () => {
     <div className="flex h-[calc(100vh-120px)] gap-4">
       {/* Channels Sidebar */}
       <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="w-72 shrink-0">
-        <Card className="h-full flex flex-col">
+        <Card className="h-full flex flex-col" padding="">
           <div className="p-4 border-b border-gray-100 dark:border-gray-800">
             <h2 className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
               <HiChat className="text-primary-500" /> Channels
@@ -84,7 +84,7 @@ const Chat = () => {
 
       {/* Chat Area */}
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex-1">
-        <Card className="h-full flex flex-col">
+        <Card className="h-full flex flex-col" padding="">
           {/* Chat Header */}
           <div className="px-6 py-4 border-b border-gray-100 dark:border-gray-800 flex items-center justify-between">
             <div className="flex items-center gap-3">

@@ -90,7 +90,7 @@ const Courses = () => {
               transition={{ delay: i * 0.05 }}
               whileHover={{ y: -8 }}
             >
-              <Card className="overflow-hidden h-full flex flex-col">
+              <Card className="overflow-hidden h-full flex flex-col" padding="">
                 <div className={`h-40 bg-gradient-to-br ${gradients[i % gradients.length]} p-6 flex flex-col justify-between`}>
                   <div className="flex justify-between items-start">
                     <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs font-medium">

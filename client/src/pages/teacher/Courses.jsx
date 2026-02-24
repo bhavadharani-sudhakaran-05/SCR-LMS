@@ -30,7 +30,7 @@ const Courses = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {courses.map((course, i) => (
           <motion.div key={course._id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} whileHover={{ y: -5 }}>
-            <Card className="overflow-hidden">
+            <Card className="overflow-hidden" padding="">
               <div className={`h-36 bg-gradient-to-br ${gradients[i % gradients.length]} p-6 flex flex-col justify-between`}>
                 <div className="flex justify-between">
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${course.status === 'published' ? 'bg-emerald-500/20 text-emerald-100' : 'bg-amber-500/20 text-amber-100'}`}>

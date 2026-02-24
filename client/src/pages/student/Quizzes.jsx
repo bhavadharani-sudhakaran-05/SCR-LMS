@@ -44,7 +44,7 @@ const Quizzes = () => {
             const daysLeft = Math.ceil((new Date(quiz.dueDate) - new Date()) / 86400000);
             return (
               <motion.div key={quiz._id} layout initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} transition={{ delay: i * 0.05 }} whileHover={{ y: -5 }}>
-                <Card className="overflow-hidden h-full">
+                <Card className="overflow-hidden h-full" padding="">
                   <div className={`h-2 bg-gradient-to-r ${colors[quiz.type] || colors.mcq}`} />
                   <div className="p-5">
                     <div className="flex items-start justify-between mb-3">

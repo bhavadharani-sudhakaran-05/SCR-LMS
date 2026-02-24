@@ -110,7 +110,7 @@ const Leaderboard = () => {
 
       {/* Rankings Table */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-        <Card className="overflow-hidden">
+        <Card className="overflow-hidden" padding="">
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>

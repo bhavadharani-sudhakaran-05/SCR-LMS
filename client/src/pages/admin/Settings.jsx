@@ -110,7 +110,7 @@ const Settings = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {sections.map((section, i) => (
           <motion.div key={section.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>
-            <Card className="overflow-hidden h-full">
+            <Card className="overflow-hidden h-full" padding="">
               <div className={`bg-gradient-to-r ${section.color} p-4 flex items-center gap-3`}>
                 <section.icon className="h-6 w-6 text-white" />
                 <h2 className="text-lg font-semibold text-white">{section.title}</h2>

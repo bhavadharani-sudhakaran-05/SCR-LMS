@@ -61,7 +61,7 @@ const Courses = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.05 }}
           >
-            <Card className="overflow-hidden h-full flex flex-col" hover>
+            <Card className="overflow-hidden h-full flex flex-col" padding="" hover>
               <div className={`h-32 bg-gradient-to-r ${gradients[i % gradients.length]} p-5 flex items-end`}>
                 <h3 className="text-lg font-bold text-white leading-tight">{course.title}</h3>
               </div>
