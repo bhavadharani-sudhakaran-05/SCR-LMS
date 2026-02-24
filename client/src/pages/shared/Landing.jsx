@@ -60,17 +60,17 @@ const Landing = () => {
 
   /* ═══════════════════════════════════════════════════════════ */
   return (
-    <div className="min-h-screen bg-white dark:bg-dark-bg">
+    <div className="min-h-screen w-full bg-white dark:bg-dark-bg overflow-x-hidden">
 
       {/* ────────────── NAVBAR ────────────── */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-white/90 dark:bg-dark-bg/90 backdrop-blur-2xl shadow-lg shadow-black/[0.04] dark:shadow-black/25 border-b border-gray-200/60 dark:border-gray-700/40'
+            ? 'bg-white/80 dark:bg-dark-bg/80 backdrop-blur-xl shadow-lg shadow-black/[0.03] dark:shadow-black/30 border-b border-gray-200/50 dark:border-gray-700/50'
             : 'bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-16 lg:h-[72px]">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-2.5 shrink-0">
@@ -127,7 +127,7 @@ const Landing = () => {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden overflow-hidden bg-white dark:bg-dark-card border-t border-gray-100 dark:border-gray-800"
             >
-              <div className="px-4 py-4 space-y-1">
+              <div className="px-6 py-4 space-y-1">
                 {['Features', 'Pricing', 'About'].map((item) => (
                   <a
                     key={item}
@@ -153,20 +153,20 @@ const Landing = () => {
       </nav>
 
       {/* ────────────── HERO ────────────── */}
-      <section className="relative pt-28 pb-10 sm:pt-32 sm:pb-14 lg:pt-40 lg:pb-20 overflow-hidden">
-        {/* BG blobs — contained inside section */}
-        <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-          <div className="absolute -top-32 right-0 h-[420px] w-[420px] rounded-full bg-primary-400/15 dark:bg-primary-400/8 blur-[100px]" />
-          <div className="absolute bottom-0 left-0 h-[420px] w-[420px] rounded-full bg-accent-400/15 dark:bg-accent-400/8 blur-[100px]" />
+      <section className="relative pt-32 pb-12 sm:pt-36 sm:pb-16 lg:pt-44 lg:pb-24">
+        {/* BG blobs */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+          <div className="absolute -top-40 -right-20 h-[500px] w-[500px] rounded-full bg-primary-400/20 dark:bg-primary-500/10 blur-[120px]" />
+          <div className="absolute -bottom-20 -left-20 h-[500px] w-[500px] rounded-full bg-accent-400/20 dark:bg-accent-500/10 blur-[120px]" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative w-full max-w-6xl mx-auto px-6 sm:px-8 lg:px-10 text-center">
           {/* Badge */}
           <motion.div
             initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ type: 'spring', delay: 0.1 }}
-            className="inline-flex items-center gap-2 bg-primary-50 dark:bg-primary-900/20 border border-primary-200/70 dark:border-primary-700/40 px-4 py-1.5 rounded-full text-[13px] font-semibold text-primary-700 dark:text-primary-300 mb-6"
+            className="inline-flex items-center gap-2 bg-primary-50 dark:bg-primary-900/30 border border-primary-200/60 dark:border-primary-700/50 px-5 py-2 rounded-full text-[13px] font-semibold text-primary-700 dark:text-primary-300 mb-8"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inset-0 rounded-full bg-primary-400 opacity-75 animate-ping" />
@@ -177,10 +177,10 @@ const Landing = () => {
 
           {/* Heading */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.05 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1]"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08]"
           >
             <span className="text-gray-900 dark:text-white">Learn Smarter</span>
             <br />
@@ -192,18 +192,18 @@ const Landing = () => {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: 0.15 }}
-            className="mt-5 text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed"
+            className="mt-6 text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed"
           >
             The next-generation Smart Classroom &amp; LMS that combines AI tutoring,
             gamification, live classes, and analytics into one powerful platform.
           </motion.p>
 
-          {/* CTA */}
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.25 }}
-            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
+            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link to="/register">
               <Button variant="primary" size="lg" icon={HiArrowRight}>Start Learning Free</Button>
@@ -213,18 +213,18 @@ const Landing = () => {
             </Link>
           </motion.div>
 
-          {/* Stats */}
-          <div className="mt-12 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+          {/* Stats Row */}
+          <div className="mt-16 sm:mt-20 flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14">
             {stats.map((s, i) => (
               <motion.div
                 key={s.label}
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35 + i * 0.07 }}
-                className="text-center"
+                className="text-center min-w-[100px]"
               >
                 <div className="text-3xl sm:text-4xl font-extrabold gradient-text leading-tight">{s.value}</div>
-                <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1 font-medium">{s.label}</div>
+                <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-2 font-medium">{s.label}</div>
               </motion.div>
             ))}
           </div>
@@ -234,17 +234,17 @@ const Landing = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-12 sm:mt-16 relative mx-auto max-w-5xl"
+            className="mt-14 sm:mt-20 relative mx-auto max-w-5xl"
           >
             {/* Glow */}
-            <div className="absolute -inset-3 rounded-3xl bg-gradient-to-r from-primary-500/15 via-accent-500/10 to-primary-500/15 blur-2xl pointer-events-none" />
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-primary-500/15 via-accent-500/10 to-primary-500/15 blur-2xl pointer-events-none" />
 
             {/* Bottom fade */}
-            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white dark:from-dark-bg to-transparent z-10 rounded-b-2xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white dark:from-dark-bg to-transparent z-10 rounded-b-2xl pointer-events-none" />
 
-            <div className="relative rounded-2xl border border-gray-200 dark:border-gray-700/50 shadow-2xl shadow-gray-300/20 dark:shadow-black/30 overflow-hidden">
+            <div className="relative rounded-2xl border border-gray-200 dark:border-gray-700/60 shadow-2xl shadow-gray-400/15 dark:shadow-black/40 overflow-hidden">
               {/* Title bar */}
-              <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-100 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700/50">
+              <div className="flex items-center gap-2 px-4 py-2.5 bg-gray-100 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700/60">
                 <div className="flex gap-1.5">
                   <div className="h-3 w-3 rounded-full bg-red-400" />
                   <div className="h-3 w-3 rounded-full bg-amber-400" />
@@ -257,23 +257,25 @@ const Landing = () => {
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="p-4 sm:p-6 bg-white dark:bg-gray-800">
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+              {/* Dashboard Content */}
+              <div className="p-5 sm:p-7 bg-white dark:bg-gray-800">
+                {/* Stat cards */}
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-5">
                   {dashCards.map((c) => (
-                    <div key={c.label} className="bg-gray-50 dark:bg-gray-700/60 rounded-xl p-3 sm:p-4 border border-gray-100 dark:border-gray-600/30">
-                      <div className={`h-1 w-8 ${c.clr} rounded-full mb-2`} />
+                    <div key={c.label} className="bg-gray-50 dark:bg-gray-700/60 rounded-xl p-4 border border-gray-100 dark:border-gray-600/40">
+                      <div className={`h-1.5 w-10 ${c.clr} rounded-full mb-3`} />
                       <div className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{c.value}</div>
-                      <div className="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5 font-medium">{c.label}</div>
+                      <div className="text-[11px] text-gray-500 dark:text-gray-400 mt-1 font-medium">{c.label}</div>
                     </div>
                   ))}
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {/* Chart + Badges row */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                   {/* Chart */}
-                  <div className="sm:col-span-2 bg-gray-50 dark:bg-gray-700/60 rounded-xl p-4 border border-gray-100 dark:border-gray-600/30 h-40">
-                    <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Performance</div>
-                    <div className="flex items-end gap-1.5 h-24">
+                  <div className="sm:col-span-2 bg-gray-50 dark:bg-gray-700/60 rounded-xl p-5 border border-gray-100 dark:border-gray-600/40">
+                    <div className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-4">Performance</div>
+                    <div className="flex items-end gap-1.5 sm:gap-2 h-24">
                       {bars.map((h, i) => (
                         <motion.div
                           key={i}
@@ -281,16 +283,16 @@ const Landing = () => {
                           whileInView={{ height: `${h}%` }}
                           transition={{ delay: 0.6 + i * 0.035, duration: 0.4 }}
                           viewport={{ once: true }}
-                          className="flex-1 bg-gradient-to-t from-primary-600 to-primary-400 rounded-t-sm min-w-0"
+                          className="flex-1 bg-gradient-to-t from-primary-600 to-primary-400 rounded-t min-w-0"
                         />
                       ))}
                     </div>
                   </div>
 
                   {/* Badges */}
-                  <div className="bg-gray-50 dark:bg-gray-700/60 rounded-xl p-4 border border-gray-100 dark:border-gray-600/30 h-40">
-                    <div className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Badges</div>
-                    <div className="grid grid-cols-3 gap-2">
+                  <div className="bg-gray-50 dark:bg-gray-700/60 rounded-xl p-5 border border-gray-100 dark:border-gray-600/40">
+                    <div className="text-sm font-semibold text-gray-700 dark:text-gray-200 mb-4">Badges</div>
+                    <div className="grid grid-cols-3 gap-3 justify-items-center">
                       {['🏆', '⚡', '🔥', '💎', '🎯', '🌟'].map((b, i) => (
                         <motion.div
                           key={i}
@@ -298,7 +300,7 @@ const Landing = () => {
                           whileInView={{ scale: 1 }}
                           transition={{ delay: 0.8 + i * 0.07, type: 'spring', stiffness: 280, damping: 20 }}
                           viewport={{ once: true }}
-                          className="h-10 w-10 rounded-xl bg-white dark:bg-gray-600/50 border border-gray-100 dark:border-gray-500/30 flex items-center justify-center text-lg"
+                          className="h-11 w-11 rounded-xl bg-white dark:bg-gray-600/50 border border-gray-200 dark:border-gray-500/40 flex items-center justify-center text-xl shadow-sm"
                         >
                           {b}
                         </motion.div>
@@ -313,10 +315,10 @@ const Landing = () => {
       </section>
 
       {/* ────────────── FEATURES ────────────── */}
-      <section id="features" className="relative py-16 sm:py-20 lg:py-24 bg-gray-50 dark:bg-gray-900/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="features" className="relative py-20 sm:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900/40">
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           {/* Header */}
-          <div className="text-center mb-10 sm:mb-14">
+          <div className="text-center mb-12 sm:mb-16">
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -339,34 +341,36 @@ const Landing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.08 }}
-              className="mt-3 text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
+              className="mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
             >
               Powered by cutting-edge AI technology to transform how you learn, teach, and grow.
             </motion.p>
           </div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          {/* Feature Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7">
             {features.map((f, i) => (
               <motion.div
                 key={f.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-30px' }}
+                viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.35, delay: i * 0.04 }}
                 whileHover={{ y: -4 }}
-                className="relative rounded-2xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border p-5 sm:p-6 hover:shadow-lg hover:shadow-gray-200/50 dark:hover:shadow-black/20 transition-shadow duration-300"
+                className="relative rounded-2xl bg-white dark:bg-dark-card border border-gray-200 dark:border-dark-border overflow-hidden hover:shadow-xl hover:shadow-gray-200/60 dark:hover:shadow-black/30 transition-all duration-300"
               >
-                {/* Icon */}
-                <div className={`flex items-center justify-center h-11 w-11 rounded-xl bg-gradient-to-br ${f.gradient} text-white mb-3.5 shrink-0`}>
-                  <f.icon className="h-5 w-5" />
+                <div className="p-7 sm:p-8">
+                  {/* Icon */}
+                  <div className={`inline-flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-br ${f.gradient} text-white mb-5 shadow-lg`}>
+                    <f.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                    {f.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                    {f.desc}
+                  </p>
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-1">
-                  {f.title}
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                  {f.desc}
-                </p>
               </motion.div>
             ))}
           </div>
@@ -374,10 +378,10 @@ const Landing = () => {
       </section>
 
       {/* ────────────── ROLES ────────────── */}
-      <section className="relative py-16 sm:py-20 lg:py-24 bg-white dark:bg-dark-bg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 sm:py-24 lg:py-32 bg-white dark:bg-dark-bg">
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           {/* Header */}
-          <div className="text-center mb-10 sm:mb-14">
+          <div className="text-center mb-12 sm:mb-16">
             <motion.span
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -400,41 +404,43 @@ const Landing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.08 }}
-              className="mt-3 text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto"
+              className="mt-4 text-base sm:text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto"
             >
               Whether you're a student, teacher, parent, or administrator — Acadrix has you covered.
             </motion.p>
           </div>
 
-          {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          {/* Role Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
             {roles.map((r, i) => (
               <motion.div
                 key={r.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-30px' }}
+                viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.35, delay: i * 0.08 }}
                 whileHover={{ y: -6 }}
-                className="rounded-2xl bg-gray-50 dark:bg-dark-card border border-gray-100 dark:border-dark-border p-5 sm:p-6 hover:shadow-lg hover:shadow-gray-200/50 dark:hover:shadow-black/20 transition-shadow duration-300 flex flex-col"
+                className="rounded-2xl bg-gray-50 dark:bg-dark-card border border-gray-200 dark:border-dark-border overflow-hidden hover:shadow-xl hover:shadow-gray-200/60 dark:hover:shadow-black/30 transition-all duration-300 flex flex-col"
               >
-                <div className="h-12 w-12 rounded-xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-2xl mb-4">
-                  {r.emoji}
+                <div className="p-7 sm:p-8 flex flex-col flex-1">
+                  <div className="h-14 w-14 rounded-2xl bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-3xl mb-5 shadow-sm">
+                    {r.emoji}
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                    {r.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-6 flex-1">
+                    {r.desc}
+                  </p>
+                  <ul className="space-y-2.5">
+                    {r.items.map((item) => (
+                      <li key={item} className="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300">
+                        <HiCheck className="h-4 w-4 text-emerald-500 shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white mb-1">
-                  {r.title}
-                </h3>
-                <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed mb-4 flex-1">
-                  {r.desc}
-                </p>
-                <ul className="space-y-1.5">
-                  {r.items.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300">
-                      <HiCheck className="h-4 w-4 text-emerald-500 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
               </motion.div>
             ))}
           </div>
@@ -442,16 +448,16 @@ const Landing = () => {
       </section>
 
       {/* ────────────── CTA ────────────── */}
-      <section className="relative py-16 sm:py-20 lg:py-24 overflow-hidden">
+      <section className="relative py-20 sm:py-24 lg:py-32 overflow-hidden">
         {/* BG */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-accent-600" />
         {/* Dot pattern */}
         <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '30px 30px' }}
+          className="absolute inset-0 opacity-[0.07]"
+          style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '32px 32px' }}
         />
 
-        <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative w-full max-w-3xl mx-auto px-6 sm:px-8 lg:px-10 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -466,7 +472,7 @@ const Landing = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="mt-4 text-base sm:text-lg text-white/70 max-w-xl mx-auto leading-relaxed"
+            className="mt-6 text-base sm:text-lg text-white/85 max-w-xl mx-auto leading-relaxed"
           >
             Join thousands of students, teachers, and institutions already using
             Acadrix to revolutionize education.
@@ -476,25 +482,38 @@ const Landing = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: 0.18 }}
-            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3"
+            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link to="/register">
-              <Button variant="glass" size="lg" icon={HiArrowRight}>Get Started for Free</Button>
+              <Button
+                variant="primary"
+                size="lg"
+                icon={HiArrowRight}
+                className="!bg-white !text-primary-700 hover:!bg-gray-100 !shadow-xl !shadow-black/10 font-bold"
+              >
+                Get Started for Free
+              </Button>
             </Link>
             <Link to="/login">
-              <Button variant="glass" size="lg">Sign In</Button>
+              <Button
+                variant="glass"
+                size="lg"
+                className="border-2 border-white/30 text-white hover:bg-white/15 backdrop-blur-sm"
+              >
+                Sign In
+              </Button>
             </Link>
           </motion.div>
         </div>
       </section>
 
       {/* ────────────── FOOTER ────────────── */}
-      <footer className="bg-gray-900 dark:bg-dark-bg text-gray-400 border-t border-gray-800/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-10">
+      <footer className="bg-gray-900 dark:bg-gray-950 text-gray-400 border-t border-gray-800/60">
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 py-12 sm:py-16">
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-5 gap-10 lg:gap-12">
             {/* Brand */}
             <div className="col-span-2 sm:col-span-4 lg:col-span-2">
-              <div className="flex items-center gap-2.5 mb-3">
+              <div className="flex items-center gap-2.5 mb-4">
                 <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary-600 to-accent-500 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary-500/20">
                   A
                 </div>
@@ -515,7 +534,7 @@ const Landing = () => {
                 <h4 className="text-xs font-bold text-white uppercase tracking-[0.15em] mb-4">
                   {col.title}
                 </h4>
-                <ul className="space-y-2">
+                <ul className="space-y-2.5">
                   {col.links.map((link) => (
                     <li key={link}>
                       <a href="#" className="text-sm hover:text-white transition-colors duration-200">{link}</a>
@@ -526,7 +545,7 @@ const Landing = () => {
             ))}
           </div>
 
-          <div className="mt-10 pt-6 border-t border-gray-800/50 text-center text-sm text-gray-500">
+          <div className="mt-12 pt-8 border-t border-gray-800/60 text-center text-sm text-gray-500">
             © 2026 Acadrix. All rights reserved. Built with ❤️ for education.
           </div>
         </div>
