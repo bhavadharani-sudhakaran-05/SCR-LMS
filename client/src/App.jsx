@@ -66,8 +66,9 @@ function App() {
 
   useEffect(() => {
     initTheme();
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('acadrix_token');
     if (token) loadUser();
+    else useAuthStore.setState({ isLoading: false });
   }, []);
 
   const getDashboardRedirect = () => {
