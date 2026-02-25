@@ -13,12 +13,12 @@ const DashboardLayout = () => {
       <div className="flex flex-1 flex-col overflow-hidden">
         <Navbar />
 
-        <main className="flex-1 overflow-y-auto">
+        <main className="flex-1 overflow-y-auto overflow-x-hidden">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="p-6"
+            style={{ padding: 24, maxWidth: '100%', boxSizing: 'border-box' }}
           >
             <Outlet />
           </motion.div>

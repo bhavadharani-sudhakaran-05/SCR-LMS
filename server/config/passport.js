@@ -22,7 +22,13 @@ passport.use(
   })
 );
 
-// Google OAuth Strategy
+// Google OAuth Strategy (only if credentials are configured)
+if (
+  process.env.GOOGLE_CLIENT_ID &&
+  process.env.GOOGLE_CLIENT_ID !== 'your_google_client_id' &&
+  process.env.GOOGLE_CLIENT_SECRET &&
+  process.env.GOOGLE_CLIENT_SECRET !== 'your_google_client_secret'
+) {
 passport.use(
   new GoogleStrategy(
     {
@@ -59,6 +65,9 @@ passport.use(
     }
   )
 );
+} else {
+  console.log('⚠️  Google OAuth not configured - skipping Google Strategy');
+}
 
 passport.serializeUser((user, done) => done(null, user.id));
 passport.deserializeUser(async (id, done) => {
