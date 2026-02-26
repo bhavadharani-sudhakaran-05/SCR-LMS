@@ -10,7 +10,7 @@ const DashboardLayout = () => {
       <Sidebar />
 
       {/* Main Content */}
-      <div className="flex flex-1 flex-col overflow-hidden">
+      <div className="flex flex-1 flex-col overflow-hidden min-w-0">
         <Navbar />
 
         <main className="flex-1 overflow-y-auto overflow-x-hidden">
@@ -18,7 +18,8 @@ const DashboardLayout = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            style={{ padding: 24, maxWidth: '100%', boxSizing: 'border-box' }}
+            className="w-full min-w-0"
+            style={{ padding: 24, maxWidth: '100%', boxSizing: 'border-box', overflow: 'hidden' }}
           >
             <Outlet />
           </motion.div>

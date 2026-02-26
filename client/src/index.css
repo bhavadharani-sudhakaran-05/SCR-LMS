@@ -163,3 +163,13 @@ body {
   transform: translateY(0);
   transition: all 0.3s ease;
 }
+
+/* Ensure right-side content area never overflows */
+.flex-1 {
+  min-width: 0;
+}
+
+main > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
